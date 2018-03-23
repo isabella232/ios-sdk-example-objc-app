@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1977E1692E6CC6943D7A3FC0 /* Pods_ios_sdk_example_objc_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C91791232B1EAC8F18E30D2 /* Pods_ios_sdk_example_objc_app.framework */; };
+		4450F9CD206413730056C7A7 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4450F9CC206413730056C7A7 /* NotificationService.m */; };
+		4450F9D1206413740056C7A7 /* richPush.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4450F9C9206413730056C7A7 /* richPush.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		449A94B92051D6D5001524C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 449A94B82051D6D5001524C3 /* AppDelegate.m */; };
 		449A94C12051D6D5001524C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449A94C02051D6D5001524C3 /* Assets.xcassets */; };
 		449A94C42051D6D5001524C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449A94C22051D6D5001524C3 /* LaunchScreen.storyboard */; };
@@ -21,7 +23,35 @@
 		44DE456A2051D8AE006C13F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DE45672051D8AE006C13F7 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4450F9CF206413740056C7A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 449A94AC2051D6D5001524C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4450F9C8206413730056C7A7;
+			remoteInfo = richPush;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4450F9D5206413740056C7A7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4450F9D1206413740056C7A7 /* richPush.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4450F9C9206413730056C7A7 /* richPush.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = richPush.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4450F9CB206413730056C7A7 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		4450F9CC206413730056C7A7 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		4450F9CE206413740056C7A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449A94B42051D6D5001524C3 /* ios-sdk-example-objc-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-example-objc-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		449A94B72051D6D5001524C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		449A94B82051D6D5001524C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,6 +82,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4450F9C6206413730056C7A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		449A94B12051D6D5001524C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,10 +117,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4450F9CA206413730056C7A7 /* richPush */ = {
+			isa = PBXGroup;
+			children = (
+				4450F9CB206413730056C7A7 /* NotificationService.h */,
+				4450F9CC206413730056C7A7 /* NotificationService.m */,
+				4450F9CE206413740056C7A7 /* Info.plist */,
+			);
+			path = richPush;
+			sourceTree = "<group>";
+		};
 		449A94AB2051D6D5001524C3 = {
 			isa = PBXGroup;
 			children = (
 				449A94B62051D6D5001524C3 /* ios-sdk-example-objc-app */,
+				4450F9CA206413730056C7A7 /* richPush */,
 				449A94B52051D6D5001524C3 /* Products */,
 				0F5DF9812DC7ECCC804DD4F4 /* Pods */,
 				1B602AE40FF77AD04B87795E /* Frameworks */,
@@ -94,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				449A94B42051D6D5001524C3 /* ios-sdk-example-objc-app.app */,
+				4450F9C9206413730056C7A7 /* richPush.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +220,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4450F9C8206413730056C7A7 /* richPush */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4450F9D4206413740056C7A7 /* Build configuration list for PBXNativeTarget "richPush" */;
+			buildPhases = (
+				4450F9C5206413730056C7A7 /* Sources */,
+				4450F9C6206413730056C7A7 /* Frameworks */,
+				4450F9C7206413730056C7A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = richPush;
+			productName = richPush;
+			productReference = 4450F9C9206413730056C7A7 /* richPush.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		449A94B32051D6D5001524C3 /* ios-sdk-example-objc-app */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 449A94CA2051D6D5001524C3 /* Build configuration list for PBXNativeTarget "ios-sdk-example-objc-app" */;
@@ -181,10 +247,12 @@
 				449A94B22051D6D5001524C3 /* Resources */,
 				8448D403551E45550D889417 /* [CP] Embed Pods Frameworks */,
 				9B0BBBE276A58101F60D265F /* [CP] Copy Pods Resources */,
+				4450F9D5206413740056C7A7 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4450F9D0206413740056C7A7 /* PBXTargetDependency */,
 			);
 			name = "ios-sdk-example-objc-app";
 			productName = "ios-sdk-example-objc-app";
@@ -200,6 +268,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Jean-Michel Barbieri";
 				TargetAttributes = {
+					4450F9C8206413730056C7A7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					449A94B32051D6D5001524C3 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -225,11 +297,19 @@
 			projectRoot = "";
 			targets = (
 				449A94B32051D6D5001524C3 /* ios-sdk-example-objc-app */,
+				4450F9C8206413730056C7A7 /* richPush */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4450F9C7206413730056C7A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		449A94B22051D6D5001524C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,6 +380,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4450F9C5206413730056C7A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4450F9CD206413730056C7A7 /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		449A94B02051D6D5001524C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +406,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4450F9D0206413740056C7A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4450F9C8206413730056C7A7 /* richPush */;
+			targetProxy = 4450F9CF206413740056C7A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		449A94C22051D6D5001524C3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -330,6 +426,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4450F9D2206413740056C7A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N68EHK7Q3H;
+				INFOPLIST_FILE = richPush/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vibes.demoAppObjc.richPush;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4450F9D3206413740056C7A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N68EHK7Q3H;
+				INFOPLIST_FILE = richPush/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vibes.demoAppObjc.richPush;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		449A94C82051D6D5001524C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -475,6 +599,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4450F9D4206413740056C7A7 /* Build configuration list for PBXNativeTarget "richPush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4450F9D2206413740056C7A7 /* Debug */,
+				4450F9D3206413740056C7A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		449A94AF2051D6D5001524C3 /* Build configuration list for PBXProject "ios-sdk-example-objc-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
