@@ -8,7 +8,7 @@ target 'ios-sdk-example-objc-app' do
   use_frameworks!
 
   # Pods for TestObjectC
-  pod 'VibesPush', '2.0.0.sw4'
+  pod 'VibesPush', '2.0.1.sw4'
   pod 'Masonry', '~> 1.0.2'
   pod 'ReactiveObjC', '~> 3.0.0'
 

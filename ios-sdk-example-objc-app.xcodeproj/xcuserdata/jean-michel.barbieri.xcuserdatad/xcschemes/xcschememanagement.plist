@@ -9,6 +9,24 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>richPush.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4450F9C8206413730056C7A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>449A94B32051D6D5001524C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

@@ -18,6 +18,9 @@
 
 @implementation AppDelegate
 
+NSString * const kClientDataKey = @"client_app_data";
+NSString * const kClientCustomDataKey = @"client_custom_data";
+NSString * const kDeepLink = @"deep_link";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if (SYSTEM_VERSION_LESS_THAN( @"10.0")) {
@@ -44,14 +47,7 @@
     }
     
     // Vibes configuration
-    NSArray *array = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:TrackedEventTypeLaunch],
-                      [NSNumber numberWithInt:TrackedEventTypeClickthru], nil];
-    [Vibes configureWithAppId:@"[YOUR APP ID HERE]"
-            trackedEventTypes:array
-                  storageType:VibesStorageEnumUSERDEFAULTS
-                advertisingId:@""
-                       logger:nil
-                       apiUrl:nil];
+    [Vibes configureWithAppId:@"[YOUR APP ID HERE]"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.vController = [ViewController new];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.vController];
@@ -69,6 +65,27 @@
     // If the user is logged in then ...
     // [[Vibes shared] setPushTokenFromData:deviceToken];
     // [[Vibes shared] registerPush];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    [self receivedPushNotifWith:userInfo];
+    completionHandler(UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionBadge);
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    [self receivedPushNotifWith:response.notification.request.content.userInfo];
+    completionHandler();
+}
+
+- (void)receivedPushNotifWith:(NSDictionary *)userInfo {
+    [Vibes configureWithAppId:@"[YOUR APP ID HERE]"];
+    [[Vibes shared] receivedPushWith:userInfo at:[NSDate date]];
+    if (userInfo[kClientCustomDataKey]) {
+        // Do something with the custom data
+    }
+    if (userInfo[kClientDataKey][kDeepLink]) {
+        // Do something with the deep_link: load a viewcontroller...
+    }
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
